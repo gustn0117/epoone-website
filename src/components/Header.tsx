@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 
 const navItems = [
@@ -64,14 +65,15 @@ export default function Header() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-20">
-        <Link href="/" className="flex items-center gap-2 group">
-          <div className="flex items-center">
-            <span className="text-2xl font-bold text-primary transition-colors group-hover:text-primary-light">EPO</span>
-            <span className="relative">
-              <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-accent text-white text-xs font-bold relative -top-1 group-hover:bg-accent-light transition-colors">:</span>
-            </span>
-            <span className="text-2xl font-bold text-primary transition-colors group-hover:text-primary-light">ONE</span>
-          </div>
+        <Link href="/" className="flex items-center group">
+          <Image
+            src="/images/logo.png"
+            alt="EPOONE"
+            width={140}
+            height={45}
+            className="object-contain group-hover:opacity-80 transition-opacity"
+            priority
+          />
         </Link>
 
         {/* Desktop Nav */}

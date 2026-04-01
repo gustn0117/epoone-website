@@ -320,6 +320,32 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ═══════════ CLIENTS ═══════════ */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-16">
+            <p className="text-accent font-semibold text-sm tracking-widest mb-3">CLIENTS</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">주요 고객사</h2>
+            <p className="text-gray-500">국내외 대기업 및 반도체 장비업체와 함께합니다</p>
+            <div className="section-divider mx-auto mt-4" />
+          </div>
+          <div className="grid grid-cols-3 md:grid-cols-6 gap-6">
+            {[
+              "SAMSUNG", "SEMES", "SK hynix", "SK siltron",
+              "HYUNDAI", "HYUNDAI MOBIS", "ASM", "WONIK IPS",
+              "EBARA", "KLA", "DEVICE", "SEMIQUZ",
+            ].map((client, i) => (
+              <div
+                key={i}
+                className="bg-gray-50 rounded-xl p-5 flex items-center justify-center h-20 hover:shadow-md hover:bg-white hover:-translate-y-0.5 transition-all duration-300 border border-transparent hover:border-gray-200"
+              >
+                <span className="text-xs md:text-sm font-bold text-gray-400 tracking-wider text-center">{client}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ═══════════ APPLICATION AREAS ═══════════ */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4">
