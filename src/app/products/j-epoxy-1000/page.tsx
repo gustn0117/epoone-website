@@ -4,8 +4,6 @@ import SubpageLayout from "@/components/SubpageLayout";
 const tabs = [
   { label: "제이폭시-2000 라이닝", href: "/products/j-epoxy-2000" },
   { label: "제이폭시-1000 하도", href: "/products/j-epoxy-1000" },
-  { label: "프로아 순에어 라이닝", href: "/products/pure-air-lining" },
-  { label: "프로아 순에어 실러", href: "/products/pure-air-sealer" },
 ];
 
 export default function JEpoxy1000Page() {
@@ -144,7 +142,7 @@ export default function JEpoxy1000Page() {
         </div>
 
         {/* Caution */}
-        <div>
+        <div className="mb-16">
           <h3 className="text-xl font-bold text-gray-900 mb-6">주의사항</h3>
           <div className="bg-red-50 rounded-xl p-6">
             <ul className="space-y-2 text-sm text-gray-600">
@@ -155,6 +153,69 @@ export default function JEpoxy1000Page() {
               <li>5. 용도 이외의 사용을 절대 금합니다.</li>
               <li>6. 기타 자세한 사항은 당사 기술 연구소로 문의해 주시기 바랍니다.</li>
             </ul>
+          </div>
+        </div>
+
+        {/* PDF Downloads */}
+        <div>
+          <h3 className="text-xl font-bold text-gray-900 mb-6">기술자료 다운로드</h3>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="border border-gray-100 rounded-2xl p-6 hover:shadow-lg transition-all">
+              <div className="flex items-center gap-3 mb-5">
+                <Image src="/images/logo.png" alt="EPOONE" width={80} height={28} className="object-contain" />
+                <span className="text-xs text-gray-400">에포원</span>
+              </div>
+              <div className="space-y-3">
+                <a href="/pdf/j-epoxy-2000.pdf" download className="group flex items-center gap-3 p-3 bg-gray-50 rounded-xl hover:bg-primary/5 transition-colors">
+                  <div className="w-10 h-10 rounded-lg bg-red-500/10 flex items-center justify-center shrink-0">
+                    <svg className="w-5 h-5 text-red-500" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clipRule="evenodd" /></svg>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-sm font-semibold text-gray-900 group-hover:text-primary transition-colors">제이폭시-2000 라이닝</p>
+                    <p className="text-xs text-gray-400">카탈로그 PDF</p>
+                  </div>
+                  <svg className="w-4 h-4 text-gray-300 group-hover:text-primary transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                </a>
+                <a href="/pdf/j-epoxy-1000.pdf" download className="group flex items-center gap-3 p-3 bg-gray-50 rounded-xl hover:bg-primary/5 transition-colors">
+                  <div className="w-10 h-10 rounded-lg bg-red-500/10 flex items-center justify-center shrink-0">
+                    <svg className="w-5 h-5 text-red-500" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clipRule="evenodd" /></svg>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-sm font-semibold text-gray-900 group-hover:text-primary transition-colors">제이폭시-1000 하도</p>
+                    <p className="text-xs text-gray-400">카탈로그 PDF</p>
+                  </div>
+                  <svg className="w-4 h-4 text-gray-300 group-hover:text-primary transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                </a>
+              </div>
+            </div>
+            <div className="border border-gray-100 rounded-2xl p-6 hover:shadow-lg transition-all">
+              <div className="flex items-center gap-3 mb-5">
+                <span className="text-sm font-bold text-gray-700 tracking-wider">JEVISCO</span>
+                <span className="text-xs text-gray-400">강남제비스코</span>
+              </div>
+              <div className="space-y-3">
+                <a href="/pdf/pure-air-lining-tds.pdf" download className="group flex items-center gap-3 p-3 bg-gray-50 rounded-xl hover:bg-accent/5 transition-colors">
+                  <div className="w-10 h-10 rounded-lg bg-red-500/10 flex items-center justify-center shrink-0">
+                    <svg className="w-5 h-5 text-red-500" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clipRule="evenodd" /></svg>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-sm font-semibold text-gray-900 group-hover:text-accent transition-colors">프로아 순에어 라이닝</p>
+                    <p className="text-xs text-gray-400">TDS PDF</p>
+                  </div>
+                  <svg className="w-4 h-4 text-gray-300 group-hover:text-accent transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                </a>
+                <a href="/pdf/pure-air-sealer-tds.pdf" download className="group flex items-center gap-3 p-3 bg-gray-50 rounded-xl hover:bg-accent/5 transition-colors">
+                  <div className="w-10 h-10 rounded-lg bg-red-500/10 flex items-center justify-center shrink-0">
+                    <svg className="w-5 h-5 text-red-500" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clipRule="evenodd" /></svg>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-sm font-semibold text-gray-900 group-hover:text-accent transition-colors">프로아 순에어 실러</p>
+                    <p className="text-xs text-gray-400">TDS PDF</p>
+                  </div>
+                  <svg className="w-4 h-4 text-gray-300 group-hover:text-accent transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -239,51 +239,62 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ═══════════ PURE AIR PRODUCTS ═══════════ */}
+      {/* ═══════════ PDF DOWNLOADS ═══════════ */}
       <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
-            <p className="text-accent font-semibold text-sm tracking-widest mb-3">JEVISCO</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">프로아 순에어 제품 라인업</h2>
-            <p className="text-gray-500">저취형 무용제계 에폭시 바닥재 시스템</p>
+            <p className="text-accent font-semibold text-sm tracking-widest mb-3">DOWNLOADS</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">기술자료 다운로드</h2>
+            <p className="text-gray-500">제품 카탈로그 및 TDS를 PDF로 다운로드하세요</p>
             <div className="section-divider mx-auto mt-4" />
           </div>
           <div className="grid md:grid-cols-2 gap-8">
-            {[
-              {
-                code: "D886", role: "상도", name: "프로아 순에어 라이닝", codeColor: "bg-accent/10 text-accent",
-                desc: "저취성 원료를 주성분으로 한 무용제형 에폭시계 2액형 도료. 시공 시 냄새를 최소화하였으며 내충격성, 내마모성, 내구성이 우수합니다.",
-                specs: [["색상","회색(II), 녹색"],["고형분","약 98%"],["혼합비","7:1"],["도막","1~3mm"],["가사시간","1시간"],["포장","24kg"]],
-                href: "/products/pure-air-lining",
-              },
-              {
-                code: "D887", role: "하도", name: "프로아 순에어 실러", codeColor: "bg-primary/10 text-primary",
-                desc: "저취성 원료를 주성분으로 한 용제형 에폭시계 2액형 하도 도료. 콘크리트에 깊이 침투하여 상도와의 층간 부착력을 향상시킵니다.",
-                specs: [["색상","투명"],["고형분","약 45%"],["혼합비","1:1"],["도막","50μm"],["가사시간","90분"],["포장","15kg"]],
-                href: "/products/pure-air-sealer",
-              },
-            ].map((p, i) => (
-              <div key={i} className="bg-white rounded-2xl p-8 border border-gray-100 hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
-                <div className="flex items-center gap-3 mb-5">
-                  <span className={`px-3 py-1 text-xs font-bold rounded-full ${p.codeColor}`}>{p.code}</span>
-                  <span className="px-3 py-1 bg-gray-100 text-gray-600 text-xs font-medium rounded-full">{p.role}</span>
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{p.name}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed mb-8">{p.desc}</p>
-                <div className="grid grid-cols-3 gap-3 mb-8">
-                  {p.specs.map(([label, value], j) => (
-                    <div key={j} className="bg-gray-50 rounded-lg p-3 text-center">
-                      <p className="text-[10px] text-gray-400 uppercase tracking-wider mb-0.5">{label}</p>
-                      <p className="text-sm font-semibold text-gray-800">{value}</p>
-                    </div>
-                  ))}
-                </div>
-                <Link href={p.href} className="group inline-flex items-center gap-2 text-sm text-primary font-semibold hover:text-primary-light transition-colors">
-                  상세보기
-                  <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
-                </Link>
+            <div className="bg-white rounded-2xl p-8 border border-gray-100 hover:shadow-xl transition-all">
+              <div className="flex items-center gap-3 mb-6">
+                <Image src="/images/logo.png" alt="EPOONE" width={90} height={30} className="object-contain" />
+                <span className="text-xs text-gray-400">에포원</span>
               </div>
-            ))}
+              <div className="space-y-3">
+                {[
+                  { href: "/pdf/j-epoxy-2000.pdf", name: "제이폭시-2000 라이닝", sub: "카탈로그 PDF" },
+                  { href: "/pdf/j-epoxy-1000.pdf", name: "제이폭시-1000 하도", sub: "카탈로그 PDF" },
+                ].map((dl, i) => (
+                  <a key={i} href={dl.href} download className="group flex items-center gap-3 p-4 bg-gray-50 rounded-xl hover:bg-primary/5 transition-colors">
+                    <div className="w-10 h-10 rounded-lg bg-red-500/10 flex items-center justify-center shrink-0">
+                      <svg className="w-5 h-5 text-red-500" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clipRule="evenodd" /></svg>
+                    </div>
+                    <div className="flex-1">
+                      <p className="text-sm font-semibold text-gray-900 group-hover:text-primary transition-colors">{dl.name}</p>
+                      <p className="text-xs text-gray-400">{dl.sub}</p>
+                    </div>
+                    <svg className="w-4 h-4 text-gray-300 group-hover:text-primary transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                  </a>
+                ))}
+              </div>
+            </div>
+            <div className="bg-white rounded-2xl p-8 border border-gray-100 hover:shadow-xl transition-all">
+              <div className="flex items-center gap-3 mb-6">
+                <span className="text-base font-bold text-gray-700 tracking-wider">JEVISCO</span>
+                <span className="text-xs text-gray-400">강남제비스코</span>
+              </div>
+              <div className="space-y-3">
+                {[
+                  { href: "/pdf/pure-air-lining-tds.pdf", name: "프로아 순에어 라이닝", sub: "TDS PDF" },
+                  { href: "/pdf/pure-air-sealer-tds.pdf", name: "프로아 순에어 실러", sub: "TDS PDF" },
+                ].map((dl, i) => (
+                  <a key={i} href={dl.href} download className="group flex items-center gap-3 p-4 bg-gray-50 rounded-xl hover:bg-accent/5 transition-colors">
+                    <div className="w-10 h-10 rounded-lg bg-red-500/10 flex items-center justify-center shrink-0">
+                      <svg className="w-5 h-5 text-red-500" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clipRule="evenodd" /></svg>
+                    </div>
+                    <div className="flex-1">
+                      <p className="text-sm font-semibold text-gray-900 group-hover:text-accent transition-colors">{dl.name}</p>
+                      <p className="text-xs text-gray-400">{dl.sub}</p>
+                    </div>
+                    <svg className="w-4 h-4 text-gray-300 group-hover:text-accent transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>

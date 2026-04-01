@@ -29,8 +29,6 @@ const navItems = [
     sub: [
       { label: "제이폭시-2000 라이닝", href: "/products/j-epoxy-2000" },
       { label: "제이폭시-1000 하도", href: "/products/j-epoxy-1000" },
-      { label: "프로아 순에어 라이닝", href: "/products/pure-air-lining" },
-      { label: "프로아 순에어 실러", href: "/products/pure-air-sealer" },
     ],
   },
   {

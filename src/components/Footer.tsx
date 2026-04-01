@@ -46,8 +46,6 @@ export default function Footer() {
             <ul className="space-y-2.5 text-sm">
               <li><Link href="/products/j-epoxy-2000" className="hover:text-white transition-colors">제이폭시-2000 라이닝</Link></li>
               <li><Link href="/products/j-epoxy-1000" className="hover:text-white transition-colors">제이폭시-1000 하도</Link></li>
-              <li><Link href="/products/pure-air-lining" className="hover:text-white transition-colors">프로아 순에어 라이닝</Link></li>
-              <li><Link href="/products/pure-air-sealer" className="hover:text-white transition-colors">프로아 순에어 실러</Link></li>
             </ul>
           </div>
 
