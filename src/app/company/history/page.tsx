@@ -12,63 +12,63 @@ const history = [
     year: "2025",
     color: "accent",
     events: [
-      "07 SK하이닉스 상반기 우수상 (안전보건 협력업체 평가 우수)",
-      "03 법인명 변경 (주)에포원",
-      "대표자 변경 송득범",
-      "에포원(EPOONE) 건설자재 사업 확대",
-      "03 에폭시 제조공장 협력(명진화학)",
-      "에폭시, 비산먼지 협력사(블루오션에코)",
-      "저취용 제이폭시 판매시작",
-      "04 강남제비스코(주) 파트너사 등록",
+      { text: "07 SK하이닉스 상반기 우수상 (안전보건 협력업체 평가 우수)", bold: true },
+      { text: "03 법인명 변경 (주)에포원", bold: true },
+      { text: "대표자 변경 송득범", bold: true },
+      { text: "에포원(EPOONE) 건설자재 사업 확대", bold: false },
+      { text: "03 에폭시 제조공장 협력(명진화학)", bold: false },
+      { text: "에폭시, 비산먼지 협력사(블루오션에코)", bold: false },
+      { text: "03 저취용 제이폭시 판매시작", bold: true },
+      { text: "04 강남제비스코(주) 파트너사 등록", bold: true },
     ],
   },
   {
     year: "2024",
     color: "primary",
     events: [
-      "01 대한민국 소비자평가 우수 대상",
-      "05 ISO45001, 9001, 14001 인증 (안전보건, 품질경영, 환경경영 시스템)",
-      "11 NCS 기업활용 컨설팅 참여 (기업 직무중심의 HRD-HRM)",
+      { text: "01 대한민국 소비자평가 우수 대상", bold: true },
+      { text: "05 ISO45001, 9001, 14001 인증 (안전보건, 품질경영, 환경경영 시스템)", bold: true },
+      { text: "11 NCS 기업활용 컨설팅 참여 (기업 직무중심의 HRD-HRM)", bold: false },
     ],
   },
   {
     year: "2023",
     color: "accent",
     events: [
-      "10 대한민국 프리미엄 브랜드 대상",
-      "12 대한민국 위대한 한국인 100명인 대상",
-      "평택상공회의소 중장년내일센터 협약",
+      { text: "10 대한민국 프리미엄 브랜드 대상", bold: false },
+      { text: "12 대한민국 위대한 한국인 100명인 대상", bold: true },
+      { text: "평택상공회의소 중장년내일센터 협약", bold: false },
     ],
   },
   {
     year: "2022",
     color: "primary",
     events: [
-      "02 싱가포르 현대자동차 수주 (수주공사 건설작업 및 안전관리)",
-      "03 청년내일채움공제 참여기업",
-      "06 SK하이닉스 등록 히터자켓 기능, 디자인 특허 출원",
-      "12 한국무역협회 회원 등록",
+      { text: "02 싱가포르 현대자동차 수주 (수주공사 건설작업 및 안전관리)", bold: true },
+      { text: "03 청년내일채움공제 참여기업", bold: false },
+      { text: "06 SK하이닉스 등록 히터자켓 기능, 디자인 특허 출원", bold: true },
+      { text: "12 한국무역협회 회원 등록", bold: true },
     ],
   },
   {
     year: "2021",
     color: "accent",
     events: [
-      "03 안전관리 데이터 구축 및 관리",
-      "04 안전 보건 교육 실시",
-      "05 안전보고서 및 개발 진행",
-      "06 (주)세이프티에디션 법인 설립 (히터자켓 제조 및 안전인력 양성)",
-      "07 삼성전자 DS 등록 (반도체 현장 안전관리 경험 확보)",
-      "적십자 응급처치교육 적용 (1단계 안전역량 강화활동)",
-      "09 경기도 교육청 선도기업 선정 (기술인력 확보)",
-      "10 법정의무교육 및 안전교육, 강사양성, 특성화고 취업반 실습",
+      { text: "03 안전관리 데이터 구축 및 관리", bold: false },
+      { text: "04 안전 보건 교육 실시", bold: false },
+      { text: "05 안전보고서 및 개발 진행", bold: false },
+      { text: "06 (주)세이프티에디션 법인 설립 (히터자켓 제조 및 안전인력 양성)", bold: true },
+      { text: "07 삼성전자 DS 등록 (반도체 현장 안전관리 경험 확보)", bold: true },
+      { text: "적십자 응급처치교육 적용 (1단계 안전역량 강화활동)", bold: false },
+      { text: "09 경기도 교육청 선도기업 선정 (기술인력 확보)", bold: true },
+      { text: "10 법정의무교육 및 안전교육, 강사양성, 특성화고 취업반 실습", bold: false },
     ],
   },
   {
     year: "2020",
     color: "primary",
     events: [
-      "03 안전관리 데이터 수집 및 관리 시스템 구축",
+      { text: "03 안전관리 데이터 수집 및 관리 시스템 구축", bold: false },
     ],
   },
 ];
@@ -144,11 +144,15 @@ export default function HistoryPage() {
                 }`}>
                   <ul className="space-y-2.5">
                     {item.events.map((event, j) => (
-                      <li key={j} className="flex items-start gap-2.5 text-sm text-gray-600 leading-relaxed">
+                      <li key={j} className={`flex items-start gap-2.5 text-sm leading-relaxed ${
+                        event.bold ? 'text-gray-900 font-semibold' : 'text-gray-600'
+                      }`}>
                         <span className={`w-1.5 h-1.5 rounded-full mt-1.5 shrink-0 ${
-                          item.color === 'accent' ? 'bg-accent/50' : 'bg-primary/50'
+                          event.bold
+                            ? (item.color === 'accent' ? 'bg-accent' : 'bg-primary')
+                            : (item.color === 'accent' ? 'bg-accent/40' : 'bg-primary/40')
                         }`} />
-                        {event}
+                        {event.text}
                       </li>
                     ))}
                   </ul>
