@@ -72,8 +72,8 @@ export default function Header() {
           <Image
             src="/images/logo.png"
             alt="EPOONE"
-            width={140}
-            height={45}
+            width={180}
+            height={58}
             className="object-contain group-hover:opacity-80 transition-opacity"
             priority
           />
