@@ -56,6 +56,11 @@ export default function GreetingPage() {
                   에포원은 단순한 제품 및 인력 공급을 넘어 현장의 안전과 효율,
                   그리고 신뢰를 책임지는 파트너로서 고객과 함께 성장해 나가겠습니다.
                 </p>
+                <p>
+                  앞으로도 전문성과 책임감을 바탕으로 국내외 시장에서 신뢰받는 기업이 되도록
+                  최선을 다하겠습니다.
+                </p>
+                <p className="font-medium text-gray-700">감사합니다.</p>
               </div>
               <div className="mt-8 pt-6 border-t border-gray-100 text-right">
                 <p className="text-gray-400 text-sm">(주)에포원 대표</p>
