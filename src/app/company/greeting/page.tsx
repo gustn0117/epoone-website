@@ -62,9 +62,12 @@ export default function GreetingPage() {
                 </p>
                 <p className="font-medium text-gray-700">감사합니다.</p>
               </div>
-              <div className="mt-8 pt-6 border-t border-gray-100 text-right">
-                <p className="text-gray-400 text-sm">(주)에포원 대표</p>
-                <p className="text-xl font-bold text-gray-900 mt-1">송 득 범</p>
+              <div className="mt-8 pt-6 border-t border-gray-100 flex items-end justify-end gap-4">
+                <div className="text-right">
+                  <p className="text-gray-400 text-sm">(주)에포원 대표</p>
+                  <p className="text-xl font-bold text-gray-900 mt-1">송 득 범</p>
+                </div>
+                <Image src="/images/signature.png" alt="대표 서명" width={80} height={50} className="object-contain" />
               </div>
             </div>
           </div>
