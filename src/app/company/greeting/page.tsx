@@ -102,7 +102,7 @@ export default function GreetingPage() {
                 ["대표이사", "송득범"],
                 ["전신", "(주)세이프티에디션 (2021.06 설립)"],
                 ["법인명 변경", "2025.03 (주)에포원으로 변경"],
-                ["사업영역", "친환경 에폭시 바닥재 제조 및 시공 / 건설자재 유통 / 산업안전관리"],
+                ["사업영역", "산업안전관리 서비스업 / 건축자재 유통업"],
                 ["인증현황", "KS F 4937 / 특허 제 10-2025206호 / ISO 45001, 9001, 14001"],
                 ["주요 고객사", "삼성전자, SEMES, SK하이닉스, SK실트론, 현대자동차, 현대모비스 등"],
               ].map(([key, val], i) => (
@@ -124,25 +124,19 @@ export default function GreetingPage() {
             <h3 className="text-xl md:text-2xl font-bold text-gray-900">사업 분야</h3>
             <div className="section-divider mx-auto mt-4" />
           </div>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 gap-6">
             {[
               {
                 num: "01",
-                title: "친환경 에폭시 바닥재",
-                desc: "무용제형 친환경 에폭시 바닥재 제조 및 시공. KS인증, 특허 제품으로 주차장, 병원, 공장 등 실내 바닥에 적용.",
+                title: "산업안전관리 서비스업",
+                desc: "산업안전관리, 안전교육, 안전컨설팅, 인력공급, 반도체·건설현장 안전관리, 안전용품 판매, 산업안전 연구개발, 해외 안전관리, 프로젝트 관리",
                 color: "from-primary to-primary-light",
               },
               {
                 num: "02",
-                title: "건설자재 유통",
-                desc: "건설현장 에폭시 및 산업용 바닥재 공급, 대형 건설사 프로젝트 자재 공급, 해외 건설자재 수출 사업 추진.",
+                title: "건축자재 유통업",
+                desc: "건설자재 도소매, 에폭시 바닥재 판매, 산업용 도료 판매, 건축마감재 판매, 건설자재 납품, 건설현장 자재 공급, 산업용 코팅재 판매, 수출입 무역",
                 color: "from-accent to-emerald-400",
-              },
-              {
-                num: "03",
-                title: "산업안전관리",
-                desc: "국내외 산업안전 관리 서비스, 안전교육 소프트웨어 개발, 안전용품 개발 연구소, 안전 체험 교육장 운영.",
-                color: "from-primary-light to-sky-400",
               },
             ].map((area, i) => (
               <div

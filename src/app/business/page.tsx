@@ -2,41 +2,34 @@ import Image from "next/image";
 import Link from "next/link";
 import SubpageLayout from "@/components/SubpageLayout";
 
-const tabs = [{ label: "사업영역", href: "/business" }];
+const tabs = [
+  { label: "산업안전관리 서비스업", href: "/business#safety" },
+  { label: "건축자재 유통업", href: "/business#materials" },
+];
 
-const areas = [
-  {
-    title: "제이폭시-2000 (저취) 라이닝",
-    subtitle: "무용제 에폭시 바닥재용 페인트 · 상도",
-    desc: "에폭시 수지와 변성 폴리아민이 주성분으로 설계된 2액형 상온 경화형 에폭시 라이닝입니다. 무용제형 친환경 제품으로, 1회 도장으로 1mm~3mm까지 시공이 가능하며 레벨링이 우수하고 경화 후 광택이 뛰어납니다.",
-    features: ["Self-Levelling 우수", "아민브러싱 없음", "무취형 친환경", "내마모성·내충격성 우수"],
-    img: "/images/work-1.png",
-    href: "/products/j-epoxy-2000",
-  },
-  {
-    title: "제이폭시-1000 (저취) 하도",
-    subtitle: "저취형 에폭시 바닥재 하도용 프라이머",
-    desc: "에폭시 수지와 변성 폴리아민이 주성분으로 설계된 2액형 상온 경화형 에폭시 바닥재 하도용 도료입니다. 에탄올 용제만 사용하여 콘크리트 및 시멘트 바닥면에 침투력 및 부착성이 우수하고 상도와의 층간 부착력이 뛰어납니다.",
-    features: ["우수한 침투력·부착성", "에탄올만 사용", "재도장 하도 가능", "내약품성·내수성 우수"],
-    img: "/images/work-2.png",
-    href: "/products/j-epoxy-1000",
-  },
-  {
-    title: "프로아 순에어 라이닝",
-    subtitle: "D886 · 저취형 무용제계 에폭시 바닥재 · JEVISCO",
-    desc: "저취성 원료를 주성분으로 한 무용제형 에폭시계 2액형 도료로써 시공 시 발생하는 냄새를 최소화하였으며 내충격성, 내마모성 및 내구성 등의 기계적 물성이 우수하고 1회 도장으로 후막도장이 가능하고 자체 평활성(Self-Levelling) 및 광택이 우수합니다.",
-    features: ["Self-Levelling 우수", "고형분 약 98%", "가사시간 1시간", "혼합비 7:1"],
-    img: "/images/factory-1.png",
-    href: "/products/pure-air-lining",
-  },
-  {
-    title: "프로아 순에어 실러",
-    subtitle: "D887 · 저취형 용제계 에폭시용 바닥재 하도 · JEVISCO",
-    desc: "저취성 원료를 주성분으로 한 용제형 에폭시계 2액형 하도 도료로써 시공 시 냄새를 최소화 하였으며 소지와의 부착성이 우수하고 콘크리트 및 시멘트몰탈 소재에 깊이 침투하여 조립자를 고착화시키고 상도와의 층간 부착력을 향상시킵니다.",
-    features: ["우수한 침투력", "소지 부착성 우수", "가사시간 90분", "혼합비 1:1"],
-    img: "/images/factory-3.png",
-    href: "/products/pure-air-sealer",
-  },
+const safetyItems = [
+  { title: "산업안전관리", desc: "산업현장의 안전관리 체계 구축 및 운영, 위험성 평가 및 개선" },
+  { title: "안전교육", desc: "법정의무교육, 안전보건교육, 강사양성, 특성화고 취업반 실습" },
+  { title: "안전컨설팅", desc: "기업 맞춤형 안전관리 컨설팅 및 안전보건관리체계 수립" },
+  { title: "인력공급", desc: "안전관리 전문인력 파견 및 현장 배치 서비스" },
+  { title: "반도체 현장 안전관리", desc: "삼성전자, SK하이닉스 등 반도체 현장 전문 안전관리" },
+  { title: "건설현장 관리", desc: "건설현장 안전관리 및 프로젝트 관리 서비스" },
+  { title: "안전용품 판매", desc: "산업안전 보호구 및 안전용품 유통·판매" },
+  { title: "산업안전 연구개발", desc: "안전교육 소프트웨어 개발, 안전용품 R&D" },
+  { title: "해외 안전관리", desc: "미국, 싱가포르, 필리핀 등 해외 현장 안전관리 서비스" },
+  { title: "프로젝트 관리", desc: "대형 건설·반도체 프로젝트 통합 안전관리" },
+];
+
+const materialsItems = [
+  { title: "건설자재 도소매", desc: "건설현장에 필요한 각종 자재의 도매 및 소매 유통" },
+  { title: "에폭시 바닥재 판매", desc: "제이폭시, 프로아 순에어 등 친환경 에폭시 바닥재 공급" },
+  { title: "산업용 도료 판매", desc: "산업현장에 적합한 각종 산업용 도료 공급" },
+  { title: "건축마감재 판매", desc: "건축 마감에 필요한 다양한 마감자재 유통" },
+  { title: "건설자재 납품", desc: "관공서 및 대형 건설사 프로젝트 자재 납품" },
+  { title: "건설현장 자재 공급", desc: "현장 맞춤형 자재 공급 및 물류 서비스" },
+  { title: "산업용 코팅재 판매", desc: "바닥재, 방수재, 방식재 등 산업용 코팅 제품 판매" },
+  { title: "수출입 무역", desc: "해외 건설자재 수출입 무역 사업" },
+  { title: "건설자재 수출", desc: "해외 건설현장 대상 건설자재 수출 사업 추진" },
 ];
 
 export default function BusinessPage() {
@@ -48,46 +41,126 @@ export default function BusinessPage() {
       tabs={tabs}
       activeTab="/business"
     >
-      <div className="space-y-20">
-        {areas.map((area, i) => (
-          <div
-            key={i}
-            className="grid md:grid-cols-2 gap-10 items-center"
-          >
-            <div className={i % 2 === 1 ? "md:order-2" : ""}>
-              <p className="text-accent font-medium text-sm mb-1">{area.subtitle}</p>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">{area.title}</h3>
-              <p className="text-gray-600 leading-relaxed mb-6">{area.desc}</p>
-              <div className="grid grid-cols-2 gap-3 mb-6">
-                {area.features.map((f, j) => (
-                  <div key={j} className="flex items-center gap-2">
-                    <svg className="w-4 h-4 text-accent flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                    <span className="text-sm text-gray-600">{f}</span>
-                  </div>
+      <div className="max-w-6xl mx-auto">
+        {/* Intro */}
+        <div className="text-center mb-20">
+          <p className="text-gray-500 leading-relaxed max-w-2xl mx-auto">
+            (주)에포원은 <strong className="text-gray-900">산업안전관리 서비스업</strong>과{" "}
+            <strong className="text-gray-900">건축자재 유통업</strong> 두 가지 핵심 사업영역을 바탕으로
+            고객의 안전과 가치를 실현합니다.
+          </p>
+        </div>
+
+        {/* ══════ 산업안전관리 서비스업 ══════ */}
+        <div id="safety" className="scroll-mt-40 mb-28">
+          <div className="grid md:grid-cols-2 gap-12 items-center mb-14">
+            <div>
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 mb-5">
+                <span className="w-2 h-2 rounded-full bg-primary" />
+                <span className="text-primary font-semibold text-xs tracking-widest uppercase">Safety Service</span>
+              </div>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">산업안전관리 서비스업</h2>
+              <p className="text-gray-600 leading-relaxed mb-6">
+                삼성전자, SK하이닉스, 현대자동차 등 국내 대기업 반도체·건설 현장에서
+                19년간 축적된 안전관리 노하우를 바탕으로, 최고의 안전담당자를 육성하고
+                고객 맞춤형 산업안전관리 서비스를 제공합니다.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {["삼성전자 DS", "SK하이닉스", "현대자동차", "SEMES"].map((c, i) => (
+                  <span key={i} className="px-3 py-1 bg-gray-100 text-gray-600 text-xs font-medium rounded-full">{c}</span>
                 ))}
               </div>
-              <Link
-                href={area.href}
-                className="inline-flex items-center gap-2 px-6 py-2.5 bg-primary text-white text-sm rounded-full hover:bg-primary-light transition-colors"
-              >
-                제품 상세보기
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </Link>
             </div>
-            <div className={`relative h-[350px] rounded-2xl overflow-hidden ${i % 2 === 1 ? "md:order-1" : ""}`}>
-              <Image
-                src={area.img}
-                alt={area.title}
-                fill
-                className="object-cover"
-              />
+            <div className="relative h-[350px] rounded-2xl overflow-hidden shadow-lg">
+              <Image src="/images/work-1.png" alt="산업안전관리" fill className="object-cover" />
             </div>
           </div>
-        ))}
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {safetyItems.map((item, i) => (
+              <div
+                key={i}
+                className="group bg-white rounded-xl p-6 border border-gray-100 hover:border-primary/20 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:shadow-md transition-all duration-300">
+                    <span className="text-primary text-xs font-bold group-hover:text-white transition-colors duration-300">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-gray-900 mb-1">{item.title}</h4>
+                    <p className="text-sm text-gray-500 leading-relaxed">{item.desc}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* ══════ 건축자재 유통업 ══════ */}
+        <div id="materials" className="scroll-mt-40 mb-20">
+          <div className="grid md:grid-cols-2 gap-12 items-center mb-14">
+            <div className="md:order-2">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/10 mb-5">
+                <span className="w-2 h-2 rounded-full bg-accent" />
+                <span className="text-accent font-semibold text-xs tracking-widest uppercase">Materials Distribution</span>
+              </div>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">건축자재 유통업</h2>
+              <p className="text-gray-600 leading-relaxed mb-6">
+                친환경 에폭시 바닥재를 비롯한 건설자재의 제조·유통·수출입까지,
+                건설현장에 필요한 모든 자재를 원스톱으로 공급합니다.
+                명진화학, 강남제비스코(주) 등 국내 주요 제조사와의 파트너십을 통해
+                최고 품질의 제품을 제공합니다.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {["명진화학", "강남제비스코", "블루오션에코"].map((c, i) => (
+                  <span key={i} className="px-3 py-1 bg-gray-100 text-gray-600 text-xs font-medium rounded-full">{c}</span>
+                ))}
+              </div>
+            </div>
+            <div className="relative h-[350px] rounded-2xl overflow-hidden shadow-lg md:order-1">
+              <Image src="/images/factory-1.png" alt="건축자재 유통" fill className="object-cover" />
+            </div>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {materialsItems.map((item, i) => (
+              <div
+                key={i}
+                className="group bg-white rounded-xl p-6 border border-gray-100 hover:border-accent/20 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center shrink-0 group-hover:bg-accent group-hover:shadow-md transition-all duration-300">
+                    <span className="text-accent text-xs font-bold group-hover:text-white transition-colors duration-300">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-gray-900 mb-1">{item.title}</h4>
+                    <p className="text-sm text-gray-500 leading-relaxed">{item.desc}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Products CTA */}
+        <div className="bg-gradient-to-br from-primary-dark to-primary rounded-2xl p-10 md:p-14 text-center relative overflow-hidden">
+          <div className="absolute inset-0 shimmer" />
+          <div className="relative z-10">
+            <h3 className="text-2xl font-bold text-white mb-3">에폭시 바닥재 제품이 궁금하신가요?</h3>
+            <p className="text-white/60 mb-8">제이폭시, 프로아 순에어 등 친환경 에폭시 바닥재 제품을 확인해 보세요.</p>
+            <Link
+              href="/products/j-epoxy-2000"
+              className="group inline-flex items-center gap-2 px-8 py-3.5 bg-accent text-white font-semibold rounded-full hover:bg-accent-light transition-all hover:shadow-lg hover:shadow-accent/25"
+            >
+              제품 보러가기
+              <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+            </Link>
+          </div>
+        </div>
       </div>
     </SubpageLayout>
   );

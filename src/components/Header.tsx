@@ -18,7 +18,10 @@ const navItems = [
   {
     label: "사업영역",
     href: "/business",
-    sub: [{ label: "사업영역", href: "/business" }],
+    sub: [
+      { label: "산업안전관리 서비스업", href: "/business#safety" },
+      { label: "건축자재 유통업", href: "/business#materials" },
+    ],
   },
   {
     label: "제품소개",
