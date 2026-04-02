@@ -32,8 +32,8 @@ export default function GreetingPage() {
           <div className="md:col-span-2">
             <div className="sticky top-36">
               <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl border border-gray-100 overflow-hidden">
-                <div className="relative h-[320px]">
-                  <Image src="/images/ceo.png" alt="송득범 대표" fill className="object-cover object-top" />
+                <div className="relative aspect-[3/4]">
+                  <Image src="/images/ceo.png" alt="송득범 대표" fill className="object-contain bg-gray-50" />
                 </div>
                 <div className="p-6 text-center">
                   <p className="text-accent font-semibold text-xs tracking-widest mb-2">CEO</p>
