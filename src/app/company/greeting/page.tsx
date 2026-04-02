@@ -28,6 +28,31 @@ export default function GreetingPage() {
         </div>
 
         <div className="grid md:grid-cols-5 gap-10 mb-20">
+          {/* CEO Profile Card */}
+          <div className="md:col-span-2">
+            <div className="sticky top-36">
+              <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl border border-gray-100 overflow-hidden">
+                <div className="relative h-[320px]">
+                  <Image src="/images/ceo.png" alt="송득범 대표" fill className="object-cover object-top" />
+                </div>
+                <div className="p-6 text-center">
+                  <p className="text-accent font-semibold text-xs tracking-widest mb-2">CEO</p>
+                  <p className="text-2xl font-bold text-gray-900">송 득 범</p>
+                  <p className="text-sm text-gray-500 mt-1">(주)에포원 대표이사</p>
+                </div>
+              </div>
+              <div className="grid grid-cols-2 gap-3 mt-4">
+                <div className="relative h-[120px] rounded-xl overflow-hidden shadow-md">
+                  <Image src="/images/building.png" alt="에포원 공장" fill className="object-cover" />
+                </div>
+                <div className="relative h-[120px] rounded-xl overflow-hidden shadow-md">
+                  <Image src="/images/sign.png" alt="에포원 간판" fill className="object-cover" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Greeting Text */}
           <div className="md:col-span-3">
             <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 md:p-10 border border-gray-100">
               <h3 className="text-xl font-bold text-gray-900 mb-6 leading-relaxed">
@@ -62,21 +87,10 @@ export default function GreetingPage() {
                 </p>
                 <p className="font-medium text-gray-700">감사합니다.</p>
               </div>
-              <div className="mt-8 pt-6 border-t border-gray-100 flex items-end justify-end gap-4">
-                <div className="text-right">
-                  <p className="text-gray-400 text-sm">(주)에포원 대표</p>
-                  <p className="text-xl font-bold text-gray-900 mt-1">송 득 범</p>
-                </div>
-                <Image src="/images/signature.png" alt="대표 서명" width={80} height={50} className="object-contain" />
+              <div className="mt-8 pt-6 border-t border-gray-100 text-right">
+                <p className="text-gray-400 text-sm">(주)에포원 대표</p>
+                <p className="text-xl font-bold text-gray-900 mt-1">송 득 범</p>
               </div>
-            </div>
-          </div>
-          <div className="md:col-span-2 flex flex-col gap-4">
-            <div className="relative flex-1 min-h-[200px] rounded-2xl overflow-hidden shadow-lg">
-              <Image src="/images/building.png" alt="에포원 공장" fill className="object-cover" />
-            </div>
-            <div className="relative flex-1 min-h-[200px] rounded-2xl overflow-hidden shadow-lg">
-              <Image src="/images/sign.png" alt="에포원 간판" fill className="object-cover" />
             </div>
           </div>
         </div>
