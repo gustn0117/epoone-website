@@ -7,15 +7,18 @@ const tabs = [
 ];
 
 const gallery = [
+  { src: "/images/epoxy-construction.jpg", title: "에폭시 시공" },
+  { src: "/images/epoxy-factory.jpg", title: "괴산공장 전경 (명진화학)" },
+  { src: "/images/safety-site.jpg", title: "산업안전관리 현장" },
+  { src: "/images/safety-managers.jpg", title: "안전관리 감독" },
   { src: "/images/work-1.png", title: "주차장 에폭시 바닥 시공" },
   { src: "/images/work-2.png", title: "대형 주차장 시공 현장" },
-  { src: "/images/building.png", title: "괴산 공장 전경" },
+  { src: "/images/building.png", title: "공장 전경" },
   { src: "/images/factory-1.png", title: "생산 설비" },
-  { src: "/images/factory-2.png", title: "물류 창고" },
   { src: "/images/factory-3.png", title: "제조 시설" },
   { src: "/images/warehouse-1.png", title: "원료 보관소" },
   { src: "/images/warehouse-2.png", title: "제품 보관소" },
-  { src: "/images/sign.png", title: "에포원 회사 간판" },
+  { src: "/images/sign.png", title: "에포원 회사 명패" },
 ];
 
 export default function GalleryPage() {

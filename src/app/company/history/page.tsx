@@ -13,7 +13,7 @@ const history = [
     color: "accent",
     events: [
       { text: "07 SK하이닉스 상반기 우수상 (안전보건 협력업체 평가 우수)", bold: true },
-      { text: "03 법인명 변경 (주)에포원", bold: true },
+      { text: "03 법인명 변경 (주)에포원 (2026.03)", bold: true },
       { text: "대표자 변경 송득범", bold: true },
       { text: "에포원(EPOONE) 건설자재 사업 확대", bold: false },
       { text: "03 에폭시 제조공장 협력(명진화학)", bold: false },

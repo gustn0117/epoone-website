@@ -88,7 +88,7 @@ export default function Header() {
             >
               <Link
                 href={item.href}
-                className="relative px-5 py-8 text-sm font-medium text-gray-700 hover:text-primary transition-colors"
+                className="relative px-6 py-8 text-base font-semibold text-gray-700 hover:text-primary transition-colors"
               >
                 {item.label}
                 <span className={`absolute bottom-5 left-1/2 -translate-x-1/2 h-0.5 bg-primary rounded-full transition-all duration-300 ${

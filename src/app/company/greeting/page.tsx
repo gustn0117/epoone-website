@@ -27,33 +27,28 @@ export default function GreetingPage() {
           <div className="section-divider mx-auto mt-4" />
         </div>
 
-        <div className="grid md:grid-cols-5 gap-10 mb-20">
+        <div className="grid md:grid-cols-3 gap-10 mb-20">
           {/* CEO Profile Card */}
-          <div className="md:col-span-2">
+          <div className="md:col-span-1">
             <div className="sticky top-36">
               <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl border border-gray-100 overflow-hidden">
                 <div className="relative aspect-[3/4]">
                   <Image src="/images/ceo.png" alt="송득범 대표" fill className="object-contain bg-gray-50" />
                 </div>
-                <div className="p-6 text-center">
-                  <p className="text-accent font-semibold text-xs tracking-widest mb-2">CEO</p>
-                  <p className="text-2xl font-bold text-gray-900">송 득 범</p>
+                <div className="p-5 text-center">
+                  <p className="text-accent font-semibold text-xs tracking-widest mb-1">CEO</p>
+                  <p className="text-xl font-bold text-gray-900">송 득 범</p>
                   <p className="text-sm text-gray-500 mt-1">(주)에포원 대표이사</p>
                 </div>
               </div>
-              <div className="grid grid-cols-2 gap-3 mt-4">
-                <div className="relative h-[120px] rounded-xl overflow-hidden shadow-md">
-                  <Image src="/images/building.png" alt="에포원 공장" fill className="object-cover" />
-                </div>
-                <div className="relative h-[120px] rounded-xl overflow-hidden shadow-md">
-                  <Image src="/images/sign.png" alt="에포원 간판" fill className="object-cover" />
-                </div>
+              <div className="relative h-[100px] rounded-xl overflow-hidden shadow-md mt-3">
+                <Image src="/images/sign.png" alt="에포원 명패" fill className="object-cover" />
               </div>
             </div>
           </div>
 
           {/* Greeting Text */}
-          <div className="md:col-span-3">
+          <div className="md:col-span-2">
             <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 md:p-10 border border-gray-100">
               <h3 className="text-xl font-bold text-gray-900 mb-6 leading-relaxed">
                 안녕하십니까.<br />
@@ -126,10 +121,10 @@ export default function GreetingPage() {
                 ["회사명", "(주)에포원 / EPOONE Co., Ltd."],
                 ["대표이사", "송득범"],
                 ["전신", "(주)세이프티에디션 (2021.06 설립)"],
-                ["법인명 변경", "2025.03 (주)에포원으로 변경"],
+                ["법인명 변경", "2026.03 (주)에포원으로 변경"],
                 ["사업영역", "산업안전관리 서비스업 / 건축자재 유통업"],
-                ["인증현황", "KS F 4937 / 특허 제 10-2025206호 / ISO 45001, 9001, 14001"],
-                ["주요 고객사", "삼성전자, SEMES, SK하이닉스, SK실트론, 현대자동차, 현대모비스 등"],
+                ["인증현황", "KS F 4937 / 특허 제 10-2025206호 / ISO 45001, 9001, 14001 / 관계사 (블루오션에코)"],
+                ["주요 고객사", "삼성전자, SK하이닉스, SEMES, SK실트론, 제비스코강남 등"],
               ].map(([key, val], i) => (
                 <tr key={i} className="border-b border-gray-200 hover:bg-gray-50/50 transition-colors">
                   <td className="py-4 px-5 bg-gray-50 font-semibold text-gray-700 w-[140px] text-sm">
@@ -190,7 +185,7 @@ export default function GreetingPage() {
               { year: "2022", amount: "30", unit: "억원" },
               { year: "2023", amount: "35", unit: "억원" },
               { year: "2024", amount: "26", unit: "억원" },
-              { year: "2025", amount: "38", unit: "억원 (예상)" },
+              { year: "2025", amount: "28", unit: "억원" },
             ].map((rev, i) => (
               <div
                 key={i}
@@ -212,7 +207,7 @@ export default function GreetingPage() {
               </div>
             ))}
           </div>
-          <p className="text-xs text-gray-400 text-center mt-4">* 2026년 예상매출 38억원 이상 목표</p>
+          <p className="text-xs text-gray-400 text-center mt-4">* 2026년도 진행중</p>
         </div>
       </div>
     </SubpageLayout>

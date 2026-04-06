@@ -61,18 +61,18 @@ export default function BusinessPage() {
               </div>
               <h2 className="text-3xl font-bold text-gray-900 mb-4">산업안전관리 서비스업</h2>
               <p className="text-gray-600 leading-relaxed mb-6">
-                삼성전자, SK하이닉스, 현대자동차 등 국내 대기업 반도체·건설 현장에서
-                19년간 축적된 안전관리 노하우를 바탕으로, 최고의 안전담당자를 육성하고
+                삼성전자, SK하이닉스 등 국내 대기업 반도체·건설 현장에서
+                축적된 안전관리 노하우를 바탕으로, 최고의 안전담당자를 육성하고
                 고객 맞춤형 산업안전관리 서비스를 제공합니다.
               </p>
               <div className="flex flex-wrap gap-2">
-                {["삼성전자 DS", "SK하이닉스", "현대자동차", "SEMES"].map((c, i) => (
+                {["삼성전자 DS", "SK하이닉스", "SEMES", "SK실트론"].map((c, i) => (
                   <span key={i} className="px-3 py-1 bg-gray-100 text-gray-600 text-xs font-medium rounded-full">{c}</span>
                 ))}
               </div>
             </div>
             <div className="relative h-[350px] rounded-2xl overflow-hidden shadow-lg">
-              <Image src="/images/work-1.png" alt="산업안전관리" fill className="object-cover" />
+              <Image src="/images/safety-site.jpg" alt="산업안전관리" fill className="object-cover" />
             </div>
           </div>
 
@@ -119,8 +119,15 @@ export default function BusinessPage() {
                 ))}
               </div>
             </div>
-            <div className="relative h-[350px] rounded-2xl overflow-hidden shadow-lg md:order-1">
-              <Image src="/images/factory-1.png" alt="건축자재 유통" fill className="object-cover" />
+            <div className="grid grid-rows-2 gap-4 md:order-1">
+              <div className="relative h-[170px] rounded-2xl overflow-hidden shadow-lg">
+                <Image src="/images/epoxy-construction.jpg" alt="에폭시 시공" fill className="object-cover" />
+                <div className="absolute bottom-2 left-3 px-2 py-0.5 bg-black/50 rounded text-white text-[10px]">에폭시 시공</div>
+              </div>
+              <div className="relative h-[170px] rounded-2xl overflow-hidden shadow-lg">
+                <Image src="/images/epoxy-factory.jpg" alt="에폭시 제조 - 명진화학" fill className="object-cover" />
+                <div className="absolute bottom-2 left-3 px-2 py-0.5 bg-black/50 rounded text-white text-[10px]">에폭시 제조 - 명진화학</div>
+              </div>
             </div>
           </div>
 
@@ -141,6 +148,16 @@ export default function BusinessPage() {
                     <p className="text-sm text-gray-500 leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Partner Companies */}
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-8 py-8 border-t border-gray-100">
+            <p className="text-xs text-gray-400 tracking-wider uppercase w-full text-center mb-2">관계사</p>
+            {["제비스코강남", "블루오션에코", "명진화학"].map((name, i) => (
+              <div key={i} className="px-6 py-3 bg-gray-50 rounded-xl border border-gray-100">
+                <span className="text-sm font-bold text-gray-700">{name}</span>
               </div>
             ))}
           </div>
