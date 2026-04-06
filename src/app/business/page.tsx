@@ -155,9 +155,13 @@ export default function BusinessPage() {
           {/* Partner Companies */}
           <div className="mt-10 flex flex-wrap items-center justify-center gap-8 py-8 border-t border-gray-100">
             <p className="text-xs text-gray-400 tracking-wider uppercase w-full text-center mb-2">관계사</p>
-            {["제비스코강남", "블루오션에코", "명진화학"].map((name, i) => (
-              <div key={i} className="px-6 py-3 bg-gray-50 rounded-xl border border-gray-100">
-                <span className="text-sm font-bold text-gray-700">{name}</span>
+            {[
+              { name: "제비스코강남", logo: "/images/logos/jevisco.png" },
+              { name: "블루오션에코", logo: "/images/logos/blueocean.png" },
+              { name: "명진화학", logo: "/images/logos/myungjin.png" },
+            ].map((partner, i) => (
+              <div key={i} className="px-6 py-3 bg-gray-50 rounded-xl border border-gray-100 flex items-center justify-center min-w-[140px] h-14">
+                <Image src={partner.logo} alt={partner.name} width={120} height={36} className="object-contain max-h-8 w-auto" />
               </div>
             ))}
           </div>
