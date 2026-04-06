@@ -41,8 +41,8 @@ export default function GreetingPage() {
                   <p className="text-sm text-gray-500 mt-1">(주)에포원 대표이사</p>
                 </div>
               </div>
-              <div className="relative h-[100px] rounded-xl overflow-hidden shadow-md mt-3">
-                <Image src="/images/sign.png" alt="에포원 명패" fill className="object-cover" />
+              <div className="relative rounded-xl overflow-hidden shadow-md mt-3">
+                <Image src="/images/sign.png" alt="에포원 명패" width={1536} height={1024} className="w-full h-auto rounded-xl" />
               </div>
             </div>
           </div>
