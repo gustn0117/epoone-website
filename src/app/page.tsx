@@ -281,29 +281,25 @@ export default function HomePage() {
           </div>
           <div className="grid grid-cols-3 md:grid-cols-6 gap-6">
             {[
-              { name: "SAMSUNG", logo: "/images/logos/samsung.png", dark: false },
-              { name: "SEMES", logo: "/images/logos/semes.png", dark: false },
-              { name: "SK hynix", logo: "/images/logos/skhynix.png", dark: false },
-              { name: "SK siltron", logo: "/images/logos/sksiltron.png", dark: false },
-              { name: "제비스코강남", logo: "/images/logos/jevisco.png", dark: false },
-              { name: "블루오션에코", logo: "/images/logos/blueocean.png", dark: true },
-              { name: "명진화학", logo: "/images/logos/myungjin.png", dark: false },
-              { name: "ASM", logo: "/images/logos/asm.png", dark: false },
-              { name: "WONIK IPS", logo: "/images/logos/wonikips.png", dark: false },
-              { name: "EBARA", logo: "/images/logos/ebara.png", dark: false },
-              { name: "KLA", logo: "/images/logos/kla.png", dark: false },
-              { name: "DEVICE", logo: null, dark: false },
+              { name: "SAMSUNG", logo: "/images/logos/samsung.png" },
+              { name: "SEMES", logo: "/images/logos/semes.png" },
+              { name: "SK hynix", logo: "/images/logos/skhynix.png" },
+              { name: "SK siltron", logo: "/images/logos/sksiltron.png" },
+              { name: "제비스코강남", logo: "/images/logos/jevisco.png" },
+              { name: "블루오션에코", logo: "/images/logos/blueocean.png" },
+              { name: "명진화학", logo: "/images/logos/myungjin.png" },
+              { name: "ASM", logo: "/images/logos/asm.png" },
+              { name: "WONIK IPS", logo: "/images/logos/wonikips.png" },
+              { name: "EBARA", logo: "/images/logos/ebara.png" },
+              { name: "KLA", logo: "/images/logos/kla.png" },
+              { name: "DEVICE", logo: null },
             ].map((client, i) => (
               <div
                 key={i}
-                className={`rounded-xl p-5 flex items-center justify-center h-20 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 border border-transparent hover:border-gray-200 ${
-                  client.dark ? "bg-gray-700 hover:bg-gray-800" : "bg-gray-50 hover:bg-white"
-                }`}
+                className="bg-gray-50 rounded-xl p-5 flex items-center justify-center h-20 hover:shadow-md hover:bg-white hover:-translate-y-0.5 transition-all duration-300 border border-transparent hover:border-gray-200"
               >
                 {client.logo ? (
-                  <Image src={client.logo} alt={client.name} width={120} height={40} className={`object-contain max-h-10 w-auto transition-all duration-300 ${
-                    client.dark ? "opacity-80 hover:opacity-100" : "grayscale opacity-60 hover:grayscale-0 hover:opacity-100"
-                  }`} />
+                  <Image src={client.logo} alt={client.name} width={120} height={40} className="object-contain max-h-10 w-auto grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
                 ) : (
                   <span className="text-xs md:text-sm font-bold text-gray-400 tracking-wider text-center">{client.name}</span>
                 )}
