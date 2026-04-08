@@ -158,10 +158,14 @@ export default function BusinessPage() {
             {[
               { name: "제비스코강남", logo: "/images/logos/jevisco.png" },
               { name: "블루오션에코", logo: "/images/logos/blueocean.png" },
-              { name: "명진화학", logo: "/images/logos/myungjin.png" },
+              { name: "(주)명진화학", logo: null },
             ].map((partner, i) => (
               <div key={i} className="px-6 py-3 bg-gray-50 rounded-xl border border-gray-100 flex items-center justify-center min-w-[140px] h-14">
-                <Image src={partner.logo} alt={partner.name} width={120} height={36} className="object-contain max-h-8 w-auto" />
+                {partner.logo ? (
+                  <Image src={partner.logo} alt={partner.name} width={120} height={36} className="object-contain max-h-8 w-auto" />
+                ) : (
+                  <span className="text-sm font-bold text-gray-700">{partner.name}</span>
+                )}
               </div>
             ))}
           </div>

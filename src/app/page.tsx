@@ -287,7 +287,7 @@ export default function HomePage() {
               { name: "SK siltron", logo: "/images/logos/sksiltron.png" },
               { name: "제비스코강남", logo: "/images/logos/jevisco.png" },
               { name: "블루오션에코", logo: "/images/logos/blueocean.png" },
-              { name: "명진화학", logo: "/images/logos/myungjin.png" },
+              { name: "(주)명진화학", logo: null },
               { name: "ASM", logo: "/images/logos/asm.png" },
               { name: "WONIK IPS", logo: "/images/logos/wonikips.png" },
               { name: "EBARA", logo: "/images/logos/ebara.png" },
