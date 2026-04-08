@@ -1,3 +1,4 @@
+import Image from "next/image";
 import SubpageLayout from "@/components/SubpageLayout";
 
 const tabs = [
@@ -17,15 +18,17 @@ const certificates = [
     issuer: "한국표준협회장",
     date: "2025.11.26",
     note: "최초 인증일: 2020.08.05 / 차기심사 완료기한: 2026.08.04",
+    image: "/images/cert-product.png",
   },
   {
     title: "특허증",
-    number: "제 10-2025206호",
-    standard: "친환경 에폭시 바닥재 조성물",
+    number: "제 10-2058206호",
+    standard: "친환경 방수 바닥재용 에폭시 코팅재 조성물",
     detail: "친환경 에폭시 바닥재",
     issuer: "특허청",
-    date: "2025",
-    note: "",
+    date: "2019.12.16",
+    note: "출원일: 2018.05.11 / 특허권자: 명진화학(주)",
+    image: "/images/cert-patent.jpg",
   },
   {
     title: "KTR 시험성적서",
@@ -35,6 +38,17 @@ const certificates = [
     issuer: "한국화학융합시험연구원(KTR)",
     date: "2025.10.19",
     note: "내충격 성능, 부착 성능, 곰팡이 저항성, 미끄럼 저항성, 내마모성, TVOC, 톨루엔, 폼알데하이드 시험 통과",
+    image: "/images/cert-indoor-test.png",
+  },
+  {
+    title: "실내시험확인서 (제이폭시-1000)",
+    number: "",
+    standard: "KS F 4937 : 2024",
+    detail: "제이폭시-1000 하도",
+    issuer: "한국화학융합시험연구원(KTR)",
+    date: "",
+    note: "제이폭시-1000 하도 제품 실내 오염물질 방출 시험",
+    image: "/images/cert-jepoxy1000-test.png",
   },
 ];
 
@@ -62,45 +76,56 @@ export default function CertificatesPage() {
         </div>
 
         {/* Certificates Grid */}
-        <div className="grid md:grid-cols-3 gap-8 mb-20">
+        <div className="grid md:grid-cols-2 gap-8 mb-20">
           {certificates.map((cert, i) => (
             <div
               key={i}
-              className="bg-white border border-gray-200 rounded-xl p-8 hover:shadow-lg transition-shadow"
+              className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg transition-shadow"
             >
-              <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-5">
-                <svg className="w-7 h-7 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                </svg>
+              {/* Image */}
+              <div className="relative h-[300px] bg-gray-50 flex items-center justify-center p-4">
+                <Image
+                  src={cert.image}
+                  alt={cert.title}
+                  fill
+                  className="object-contain p-4"
+                />
               </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-3">{cert.title}</h3>
-              <table className="w-full text-sm">
-                <tbody>
-                  <tr>
-                    <td className="py-1 text-gray-500 w-[70px]">인증번호</td>
-                    <td className="py-1 text-primary font-medium">{cert.number}</td>
-                  </tr>
-                  <tr>
-                    <td className="py-1 text-gray-500">규격</td>
-                    <td className="py-1 text-gray-700">{cert.standard}</td>
-                  </tr>
-                  <tr>
-                    <td className="py-1 text-gray-500">대상</td>
-                    <td className="py-1 text-gray-700">{cert.detail}</td>
-                  </tr>
-                  <tr>
-                    <td className="py-1 text-gray-500">발급</td>
-                    <td className="py-1 text-gray-700">{cert.issuer}</td>
-                  </tr>
-                  <tr>
-                    <td className="py-1 text-gray-500">날짜</td>
-                    <td className="py-1 text-gray-700">{cert.date}</td>
-                  </tr>
-                </tbody>
-              </table>
-              {cert.note && (
-                <p className="text-xs text-gray-400 mt-3 leading-relaxed">{cert.note}</p>
-              )}
+              {/* Info */}
+              <div className="p-6">
+                <h3 className="text-lg font-bold text-gray-900 mb-3">{cert.title}</h3>
+                <table className="w-full text-sm">
+                  <tbody>
+                    {cert.number && (
+                      <tr>
+                        <td className="py-1 text-gray-500 w-[70px]">인증번호</td>
+                        <td className="py-1 text-primary font-medium">{cert.number}</td>
+                      </tr>
+                    )}
+                    <tr>
+                      <td className="py-1 text-gray-500">규격</td>
+                      <td className="py-1 text-gray-700">{cert.standard}</td>
+                    </tr>
+                    <tr>
+                      <td className="py-1 text-gray-500">대상</td>
+                      <td className="py-1 text-gray-700">{cert.detail}</td>
+                    </tr>
+                    <tr>
+                      <td className="py-1 text-gray-500">발급</td>
+                      <td className="py-1 text-gray-700">{cert.issuer}</td>
+                    </tr>
+                    {cert.date && (
+                      <tr>
+                        <td className="py-1 text-gray-500">날짜</td>
+                        <td className="py-1 text-gray-700">{cert.date}</td>
+                      </tr>
+                    )}
+                  </tbody>
+                </table>
+                {cert.note && (
+                  <p className="text-xs text-gray-400 mt-3 leading-relaxed">{cert.note}</p>
+                )}
+              </div>
             </div>
           ))}
         </div>
