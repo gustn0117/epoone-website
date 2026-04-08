@@ -54,13 +54,17 @@ export default function Footer() {
               <span className="w-1 h-4 bg-accent rounded-full" />
               연락처
             </h4>
-            <p className="text-sm text-gray-500">준비중</p>
+            <ul className="space-y-2 text-sm text-gray-500">
+              <li>TEL 031-623-0525</li>
+              <li>E-mail info@epoone.com</li>
+              <li>운영시간 09:00 ~ 18:00</li>
+            </ul>
           </div>
         </div>
 
         {/* Bottom */}
         <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-xs text-gray-600">준비중</p>
+          <p className="text-xs text-gray-600">(주)에포원 | 대표 송득범</p>
           <p className="text-xs text-gray-600">
             Copyright &copy; {new Date().getFullYear()} EPOONE Co., Ltd. All Rights Reserved.
           </p>

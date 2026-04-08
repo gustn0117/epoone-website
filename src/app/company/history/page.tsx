@@ -9,17 +9,25 @@ const tabs = [
 
 const history = [
   {
-    year: "2025",
+    year: "2026",
     color: "accent",
     events: [
+      { text: "03 법인명 변경 (주)에포원", bold: true },
+      { text: "대표자 변경 대표 송득범", bold: true },
+      { text: "03 사업 추가 — 산업안전관리사업 / 건설자재 사업", bold: true },
+      { text: "03 에폭시, 비산먼지 협력사 (블루오션에코)", bold: false },
+      { text: "에폭시 제조공장 협력사 (명진화학)", bold: false },
+      { text: "04 저취용 에폭시 판매 (국내외)", bold: true },
+      { text: "04 강남제비스코(주) 협력사 등록", bold: true },
+    ],
+  },
+  {
+    year: "2025",
+    color: "primary",
+    events: [
       { text: "07 SK하이닉스 상반기 우수상 (안전보건 협력업체 평가 우수)", bold: true },
-      { text: "03 법인명 변경 (주)에포원 (2026.03)", bold: true },
-      { text: "대표자 변경 송득범", bold: true },
-      { text: "에포원(EPOONE) 건설자재 사업 확대", bold: false },
-      { text: "03 에폭시 제조공장 협력(명진화학)", bold: false },
-      { text: "에폭시, 비산먼지 협력사(블루오션에코)", bold: false },
-      { text: "03 저취용 제이폭시 판매시작", bold: true },
-      { text: "04 강남제비스코(주) 파트너사 등록", bold: true },
+      { text: "08 미국 조지아 사바나 현대자동차 예정 (Local 근로자 파견 및 안전관리감독 파견 예정)", bold: true },
+      { text: "09 필리핀 삼성 P6-PROJECT 예정", bold: true },
     ],
   },
   {
@@ -94,8 +102,9 @@ const currentProjects = [
   {
     title: "해외 프로젝트",
     items: [
-      "미국 조지아 사바나 현대자동차 예정 (Local근로자 파견 및 안전관리)",
+      "미국 조지아 사바나 현대자동차 예정 (Local 근로자 파견 및 안전관리)",
       "필리핀 삼성 P6-PROJECT 예정",
+      "베트남 2026년 에폭시 수출 예정",
     ],
   },
 ];

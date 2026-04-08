@@ -113,8 +113,10 @@ export default function Header() {
           ))}
         </nav>
 
-        <div className="hidden lg:flex items-center gap-3 text-sm text-gray-400">
-          <span>준비중</span>
+        <div className="hidden lg:flex items-center gap-1 text-sm">
+          <span className="text-gray-300 cursor-default">EN</span>
+          <span className="text-gray-300">/</span>
+          <span className="text-primary font-semibold cursor-default">KR</span>
         </div>
 
         {/* Mobile Toggle */}
