@@ -4,6 +4,7 @@ import SubpageLayout from "@/components/SubpageLayout";
 const tabs = [
   { label: "인사말", href: "/company/greeting" },
   { label: "연혁", href: "/company/history" },
+  { label: "조직도", href: "/company/organization" },
   { label: "인증서", href: "/company/certificates" },
   { label: "오시는길", href: "/company/location" },
 ];
