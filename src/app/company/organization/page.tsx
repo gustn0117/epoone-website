@@ -143,7 +143,7 @@ export default function OrganizationPage() {
             <div className="flex flex-col items-center gap-2">
               {["이사", "부장", "과장", "사원"].map((role, i) => (
                 <div key={i} className="w-full flex flex-col items-center">
-                  <div className="bg-[#5f7f9a] text-white px-6 py-2.5 rounded-xl text-center shadow-sm w-full max-w-[140px]">
+                  <div className="bg-[#5f7f9a] text-white py-2.5 rounded-xl text-center shadow-sm w-[140px] md:w-[160px]">
                     <p className="font-bold text-sm">{role}</p>
                   </div>
                   {i < 3 && <div className="w-px h-3 bg-gray-300" />}
@@ -155,7 +155,7 @@ export default function OrganizationPage() {
             <div className="flex flex-col items-center gap-2">
               {["국내영업부 이사", "부장", "과장", "사원"].map((role, i) => (
                 <div key={i} className="w-full flex flex-col items-center">
-                  <div className="bg-[#b5634b] text-white px-6 py-2.5 rounded-xl text-center shadow-sm w-full max-w-[160px]">
+                  <div className="bg-[#b5634b] text-white py-2.5 rounded-xl text-center shadow-sm w-[140px] md:w-[160px]">
                     <p className="font-bold text-sm">{role}</p>
                   </div>
                   {i < 3 && <div className="w-px h-3 bg-gray-300" />}
