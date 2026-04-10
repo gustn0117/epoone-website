@@ -118,13 +118,13 @@ export default function OrganizationPage() {
           </div>
 
           {/* 모바일: 해외/국내 라벨 */}
-          <div className="flex md:hidden gap-4 mt-4 mb-2">
+          <div className="grid grid-cols-2 md:hidden gap-4 mt-4 mb-2 w-full max-w-xs">
             <div className="text-center">
-              <div className="bg-[#5f7f9a] text-white px-4 py-2 rounded-lg text-xs font-bold shadow-sm">해외영업부</div>
+              <div className="bg-[#5f7f9a] text-white py-2 rounded-lg text-xs font-bold shadow-sm">해외영업부</div>
               <p className="text-[10px] text-gray-500 mt-1">건축자재 사업 전담</p>
             </div>
             <div className="text-center">
-              <div className="bg-[#b5634b] text-white px-4 py-2 rounded-lg text-xs font-bold shadow-sm">국내영업부</div>
+              <div className="bg-[#b5634b] text-white py-2 rounded-lg text-xs font-bold shadow-sm">국내영업부</div>
               <p className="text-[10px] text-gray-500 mt-1">인력교육,파견서비스 전담</p>
             </div>
           </div>
