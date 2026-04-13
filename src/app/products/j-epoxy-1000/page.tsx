@@ -159,13 +159,13 @@ export default function JEpoxy1000Page() {
         {/* PDF Downloads */}
         <div>
           <h3 className="text-xl font-bold text-gray-900 mb-6">기술자료 다운로드</h3>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="border border-gray-100 rounded-2xl p-6 hover:shadow-lg transition-all">
-              <div className="flex items-center gap-3 mb-5">
+          <div className="grid md:grid-cols-2 gap-6 items-stretch">
+            <div className="border border-gray-100 rounded-2xl p-6 hover:shadow-lg transition-all flex flex-col">
+              <div className="flex items-center gap-3 mb-5 h-8">
                 <Image src="/images/logo.png" alt="EPOONE" width={80} height={28} className="object-contain" />
                 <span className="text-xs text-gray-400">에포원</span>
               </div>
-              <div className="space-y-3">
+              <div className="space-y-3 flex-1 flex flex-col justify-center">
                 <a href="/pdf/j-epoxy-2000.pdf" download className="group flex items-center gap-3 p-3 bg-gray-50 rounded-xl hover:bg-primary/5 transition-colors">
                   <div className="w-10 h-10 rounded-lg bg-red-500/10 flex items-center justify-center shrink-0">
                     <svg className="w-5 h-5 text-red-500" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clipRule="evenodd" /></svg>
@@ -188,12 +188,12 @@ export default function JEpoxy1000Page() {
                 </a>
               </div>
             </div>
-            <div className="border border-gray-100 rounded-2xl p-6 hover:shadow-lg transition-all">
-              <div className="flex items-center gap-3 mb-5">
-                <span className="text-sm font-bold text-gray-700 tracking-wider">JEVISCO</span>
+            <div className="border border-gray-100 rounded-2xl p-6 hover:shadow-lg transition-all flex flex-col">
+              <div className="flex items-center gap-3 mb-5 h-8">
+                <Image src="/images/logos/jevisco.png" alt="JEVISCO" width={100} height={28} className="object-contain" />
                 <span className="text-xs text-gray-400">강남제비스코</span>
               </div>
-              <div className="space-y-3">
+              <div className="space-y-3 flex-1 flex flex-col justify-center">
                 <a href="/pdf/pure-air-lining-tds.pdf" download className="group flex items-center gap-3 p-3 bg-gray-50 rounded-xl hover:bg-accent/5 transition-colors">
                   <div className="w-10 h-10 rounded-lg bg-red-500/10 flex items-center justify-center shrink-0">
                     <svg className="w-5 h-5 text-red-500" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clipRule="evenodd" /></svg>
