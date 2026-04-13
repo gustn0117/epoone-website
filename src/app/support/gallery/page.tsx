@@ -1,27 +1,22 @@
 import Image from "next/image";
 import SubpageLayout from "@/components/SubpageLayout";
+import { supabase } from "@/lib/supabase";
+
+export const revalidate = 30;
 
 const tabs = [
   { label: "공지사항", href: "/support/notice" },
   { label: "갤러리", href: "/support/gallery" },
 ];
 
-const gallery = [
-  { src: "/images/epoxy-construction.jpg", title: "에폭시 시공" },
-  { src: "/images/epoxy-factory.jpg", title: "괴산공장 전경 (명진화학)" },
-  { src: "/images/safety-site.jpg", title: "산업안전관리 현장" },
-  { src: "/images/safety-managers.jpg", title: "안전관리 감독" },
-  { src: "/images/work-1.png", title: "주차장 에폭시 바닥 시공" },
-  { src: "/images/work-2.png", title: "대형 주차장 시공 현장" },
-  { src: "/images/building.png", title: "공장 전경" },
-  { src: "/images/factory-1.png", title: "생산 설비" },
-  { src: "/images/factory-3.png", title: "제조 시설" },
-  { src: "/images/warehouse-1.png", title: "원료 보관소" },
-  { src: "/images/warehouse-2.png", title: "제품 보관소" },
-  { src: "/images/sign.png", title: "에포원 회사 명패" },
-];
+export default async function GalleryPage() {
+  const { data } = await supabase
+    .from("gallery")
+    .select("*")
+    .order("created_at", { ascending: false });
 
-export default function GalleryPage() {
+  const items = data || [];
+
   return (
     <SubpageLayout
       category="SUPPORT"
@@ -32,21 +27,36 @@ export default function GalleryPage() {
     >
       <div className="max-w-5xl mx-auto">
         <h3 className="text-xl font-bold text-gray-900 mb-8">갤러리</h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {gallery.map((item, i) => (
-            <div key={i} className="group">
-              <div className="relative aspect-[4/3] rounded-xl overflow-hidden mb-3">
-                <Image
-                  src={item.src}
-                  alt={item.title}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-              <p className="text-sm font-medium text-gray-700">{item.title}</p>
+        {items.length === 0 ? (
+          <div className="text-center py-20 bg-white border border-gray-100 rounded-2xl">
+            <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
+              <svg className="w-8 h-8 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
             </div>
-          ))}
-        </div>
+            <p className="text-gray-400">등록된 갤러리 항목이 없습니다.</p>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            {items.map((item) => (
+              <div key={item.id} className="group">
+                <div className="relative aspect-[4/3] rounded-xl overflow-hidden mb-3">
+                  <Image
+                    src={item.image_url}
+                    alt={item.title}
+                    fill
+                    unoptimized
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <p className="text-sm font-medium text-gray-700">{item.title}</p>
+                {item.description && (
+                  <p className="text-xs text-gray-500 mt-1">{item.description}</p>
+                )}
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </SubpageLayout>
   );
