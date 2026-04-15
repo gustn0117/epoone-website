@@ -304,7 +304,7 @@ export default function HomePage() {
                 {client.logo ? (
                   <Image src={client.logo} alt={client.name} width={120} height={40} className="object-contain max-h-10 w-auto grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
                 ) : (
-                  <span className="text-xs md:text-sm font-bold text-gray-400 tracking-wider text-center">{client.name}</span>
+                  <span className="text-xs md:text-sm font-extrabold text-gray-800 tracking-wider text-center">{client.name}</span>
                 )}
               </div>
             ))}
