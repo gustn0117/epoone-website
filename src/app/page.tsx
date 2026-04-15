@@ -282,17 +282,19 @@ export default function HomePage() {
           <div className="grid grid-cols-3 md:grid-cols-6 gap-6">
             {[
               { name: "SAMSUNG", logo: "/images/logos/samsung.png" },
-              { name: "SEMES", logo: "/images/logos/semes.png" },
               { name: "SK hynix", logo: "/images/logos/skhynix.png" },
               { name: "SK siltron", logo: "/images/logos/sksiltron.png" },
               { name: "제비스코강남", logo: "/images/logos/jevisco.png" },
               { name: "블루오션에코", logo: "/images/logos/blueocean.png" },
               { name: "(주)명진화학", logo: null },
-              { name: "ASM", logo: "/images/logos/asm.png" },
               { name: "WONIK IPS", logo: "/images/logos/wonikips.png" },
               { name: "EBARA", logo: "/images/logos/ebara.png" },
-              { name: "KLA", logo: "/images/logos/kla.png" },
-              { name: "DEVICE", logo: null },
+              { name: "대보건설", logo: null },
+              { name: "동진피엔아이", logo: null },
+              { name: "동성공업도장", logo: null },
+              { name: "보미건설", logo: null },
+              { name: "카스건설", logo: null },
+              { name: "정도토건", logo: null },
             ].map((client, i) => (
               <div
                 key={i}

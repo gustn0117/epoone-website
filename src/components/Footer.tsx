@@ -55,8 +55,8 @@ export default function Footer() {
               연락처
             </h4>
             <ul className="space-y-2 text-sm text-gray-500">
-              <li>경기도 평택시 고덕중앙로 290, 1034호</li>
-              <li>TEL 031-623-0525</li>
+              <li>경기도 평택시 고덕중앙로 290, 1035호</li>
+              <li>TEL 1566-1488 / 031-623-0525</li>
               <li>E-mail info@epoone.com</li>
               <li>운영시간 09:00 ~ 18:00</li>
             </ul>

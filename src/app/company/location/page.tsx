@@ -12,7 +12,7 @@ const locations = [
   {
     label: "본사",
     color: "primary" as const,
-    address: "경기도 평택시 고덕중앙로 290, 1034호",
+    address: "경기도 평택시 고덕중앙로 290, 1035호",
     mapQuery: "경기도+평택시+고덕중앙로+290",
   },
   {
@@ -78,7 +78,7 @@ export default function LocationPage() {
         {/* Contact Info */}
         <div className="mt-16 grid md:grid-cols-3 gap-6">
           {[
-            { icon: "M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z", label: "전화", value: "031-623-0525" },
+            { icon: "M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z", label: "전화", value: "1566-1488", sub: "031-623-0525" },
             { icon: "M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z", label: "이메일", value: "info@epoone.com" },
             { icon: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z", label: "운영시간", value: "09:00 ~ 18:00" },
           ].map((info, i) => (
@@ -90,6 +90,7 @@ export default function LocationPage() {
               </div>
               <p className="text-xs text-gray-400 tracking-wider uppercase mb-1">{info.label}</p>
               <p className="font-bold text-gray-800 text-sm">{info.value}</p>
+              {"sub" in info && info.sub && <p className="text-xs text-gray-500 mt-1">{info.sub}</p>}
             </div>
           ))}
         </div>

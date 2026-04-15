@@ -66,7 +66,7 @@ export default function BusinessPage() {
                 고객 맞춤형 산업안전관리 서비스를 제공합니다.
               </p>
               <div className="flex flex-wrap gap-2">
-                {["삼성전자 DS", "SK하이닉스", "SEMES", "SK실트론"].map((c, i) => (
+                {["삼성전자 DS", "SK하이닉스", "SK실트론", "WONIK IPS", "EBARA"].map((c, i) => (
                   <span key={i} className="px-3 py-1 bg-gray-100 text-gray-600 text-xs font-medium rounded-full">{c}</span>
                 ))}
               </div>

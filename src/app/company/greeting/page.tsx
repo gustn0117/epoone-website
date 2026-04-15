@@ -125,7 +125,7 @@ export default function GreetingPage() {
                 ["법인명 변경", "2026.03 (주)에포원으로 변경"],
                 ["사업영역", "산업안전관리 서비스업 / 건축자재 유통업"],
                 ["인증현황", "KS F 4937 / 특허 제 10-2025206호 / ISO 45001, 9001, 14001 / 관계사 (블루오션에코)"],
-                ["주요 고객사", "삼성전자, SK하이닉스, SEMES, SK실트론, 제비스코강남 등"],
+                ["주요 고객사", "삼성전자, SK하이닉스, SK실트론, 제비스코강남, 대보건설, 동진피엔아이, 동성공업도장, 보미건설, 카스건설, 정도토건 등"],
               ].map(([key, val], i) => (
                 <tr key={i} className="border-b border-gray-200 hover:bg-gray-50/50 transition-colors">
                   <td className="py-4 px-5 bg-gray-50 font-semibold text-gray-700 w-[140px] text-sm">
