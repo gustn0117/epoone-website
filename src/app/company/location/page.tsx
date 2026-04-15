@@ -13,7 +13,7 @@ const locations = [
     label: "본사",
     color: "primary" as const,
     address: "경기도 평택시 고덕중앙로 290, 1035호",
-    mapQuery: "경기도+평택시+고덕중앙로+290",
+    mapQuery: "경기도+평택시+고덕중앙로+290+1035호",
   },
   {
     label: "공장 (명진화학)",

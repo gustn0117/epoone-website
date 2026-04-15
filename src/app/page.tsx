@@ -295,6 +295,7 @@ export default function HomePage() {
               { name: "보미건설", logo: null },
               { name: "카스건설", logo: null },
               { name: "정도토건", logo: null },
+              { name: "KOSCA", logo: null },
             ].map((client, i) => (
               <div
                 key={i}
