@@ -10,15 +10,17 @@ export default async function AdminPage() {
     redirect("/admin/login");
   }
 
-  const [noticesRes, galleryRes] = await Promise.all([
+  const [noticesRes, galleryRes, contactsRes] = await Promise.all([
     supabaseAdmin.from("notices").select("*").order("created_at", { ascending: false }),
     supabaseAdmin.from("gallery").select("*").order("created_at", { ascending: false }),
+    supabaseAdmin.from("contacts").select("*").order("created_at", { ascending: false }),
   ]);
 
   return (
     <AdminDashboard
       initialNotices={noticesRes.data || []}
       initialGallery={galleryRes.data || []}
+      initialContacts={contactsRes.data || []}
     />
   );
 }

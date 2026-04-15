@@ -7,10 +7,35 @@ const tabs = [{ label: "온라인문의", href: "/contact" }];
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
+  const [form, setForm] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    company: "",
+    category: "",
+    title: "",
+    content: "",
+  });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setSubmitting(true);
+    setError("");
+    const res = await fetch("/api/contacts", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(form),
+    });
+    setSubmitting(false);
+    if (!res.ok) {
+      const data = await res.json().catch(() => ({}));
+      setError(data.error || "문의 등록에 실패했습니다. 잠시 후 다시 시도해주세요.");
+      return;
+    }
     setSubmitted(true);
+    setForm({ name: "", phone: "", email: "", company: "", category: "", title: "", content: "" });
   };
 
   return (
@@ -107,6 +132,8 @@ export default function ContactPage() {
                     <input
                       type="text"
                       required
+                      value={form.name}
+                      onChange={(e) => setForm({ ...form, name: e.target.value })}
                       className="w-full px-5 py-3.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary focus:bg-white outline-none transition-all"
                       placeholder="이름을 입력해 주세요"
                     />
@@ -118,6 +145,8 @@ export default function ContactPage() {
                     <input
                       type="tel"
                       required
+                      value={form.phone}
+                      onChange={(e) => setForm({ ...form, phone: e.target.value })}
                       className="w-full px-5 py-3.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary focus:bg-white outline-none transition-all"
                       placeholder="연락처를 입력해 주세요"
                     />
@@ -132,6 +161,8 @@ export default function ContactPage() {
                     </label>
                     <input
                       type="email"
+                      value={form.email}
+                      onChange={(e) => setForm({ ...form, email: e.target.value })}
                       className="w-full px-5 py-3.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary focus:bg-white outline-none transition-all"
                       placeholder="이메일을 입력해 주세요"
                     />
@@ -142,6 +173,8 @@ export default function ContactPage() {
                     </label>
                     <input
                       type="text"
+                      value={form.company}
+                      onChange={(e) => setForm({ ...form, company: e.target.value })}
                       className="w-full px-5 py-3.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary focus:bg-white outline-none transition-all"
                       placeholder="회사 또는 기관명을 입력해 주세요"
                     />
@@ -155,7 +188,8 @@ export default function ContactPage() {
                   </label>
                   <select
                     required
-                    defaultValue=""
+                    value={form.category}
+                    onChange={(e) => setForm({ ...form, category: e.target.value })}
                     className="w-full px-5 py-3.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary focus:bg-white outline-none transition-all appearance-none"
                     style={{
                       backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23999' d='M6 8L1 3h10z'/%3E%3C/svg%3E")`,
@@ -180,6 +214,8 @@ export default function ContactPage() {
                   <input
                     type="text"
                     required
+                    value={form.title}
+                    onChange={(e) => setForm({ ...form, title: e.target.value })}
                     className="w-full px-5 py-3.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary focus:bg-white outline-none transition-all"
                     placeholder="제목을 입력해 주세요"
                   />
@@ -193,6 +229,8 @@ export default function ContactPage() {
                   <textarea
                     required
                     rows={7}
+                    value={form.content}
+                    onChange={(e) => setForm({ ...form, content: e.target.value })}
                     className="w-full px-5 py-4 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary focus:bg-white outline-none transition-all resize-none leading-relaxed"
                     placeholder="문의하실 내용을 상세히 작성해 주세요&#10;&#10;예) 제품명, 시공 면적, 현장 상황 등"
                   />
@@ -213,21 +251,26 @@ export default function ContactPage() {
                   </label>
                 </div>
 
+                {error && <p className="text-red-500 text-sm text-center">{error}</p>}
+
                 {/* Submit */}
                 <div className="text-center pt-4">
                   <button
                     type="submit"
-                    className="group px-14 py-4 bg-primary text-white font-semibold rounded-full hover:bg-primary-light transition-all hover:shadow-lg hover:shadow-primary/25 inline-flex items-center gap-2"
+                    disabled={submitting}
+                    className="group px-14 py-4 bg-primary text-white font-semibold rounded-full hover:bg-primary-light transition-all hover:shadow-lg hover:shadow-primary/25 inline-flex items-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
                   >
-                    문의하기
-                    <svg
-                      className="w-4 h-4 group-hover:translate-x-1 transition-transform"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
+                    {submitting ? "전송 중..." : "문의하기"}
+                    {!submitting && (
+                      <svg
+                        className="w-4 h-4 group-hover:translate-x-1 transition-transform"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                      </svg>
+                    )}
                   </button>
                 </div>
               </form>
