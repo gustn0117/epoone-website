@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://epoone-website.hsweb.pics"),
   title: "에포원 | EPOONE - 친환경 에폭시 바닥재 전문기업",
   description: "에포원은 친환경 에폭시 바닥재를 전문으로 제조하는 기업입니다. KS인증, 특허 취득 제품으로 안전하고 깨끗한 바닥 환경을 제공합니다.",
   openGraph: {
