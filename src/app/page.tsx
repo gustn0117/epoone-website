@@ -290,11 +290,8 @@ export default function HomePage() {
               { name: "WONIK IPS", logo: "/images/logos/wonikips.png" },
               { name: "EBARA", logo: "/images/logos/ebara.png" },
               { name: "대보건설", logo: "/images/logos/daebo.png" },
-              { name: "동진피엔아이", logo: null },
-              { name: "동성공업도장", logo: null },
               { name: "보미건설", logo: "/images/logos/bomi.png" },
               { name: "카스건설", logo: null },
-              { name: "정도토건", logo: null },
               { name: "KOSCA", logo: "/images/logos/kosca.jpeg" },
             ].map((client, i) => (
               <div
